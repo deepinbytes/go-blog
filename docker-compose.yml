@@ -1,0 +1,13 @@
+version: '2.1'
+
+services:
+
+  go-blog:
+    image: postgres:9.6.3
+    restart: always
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=admin
+      - POSTGRES_DB=go-blog

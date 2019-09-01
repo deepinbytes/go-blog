@@ -1,0 +1,18 @@
+INTERNAL_SERVER_ERROR:
+  status: "500"
+  message: "We have encountered an internal server error."
+  developer_message: "Internal server error: {error}"
+
+NOT_FOUND:
+  status: "404"
+  message: "{resource} was not found."
+
+UNAUTHORIZED:
+  status: "401"
+  message: "Authentication failed."
+  developer_message: "Authentication failed: {error}"
+
+INVALID_DATA:
+  status: "400"
+  message: "There is some problem with the data you submitted. See \"details\" for more information."
+
