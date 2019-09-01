@@ -26,6 +26,4 @@ script:
   - make test
   - $HOME/gopath/bin/goveralls -coverprofile=coverage-all.out -service=travis-ci
 
-env:
-  global:
-    - PGPORT=5433
+
