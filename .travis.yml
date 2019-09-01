@@ -21,11 +21,10 @@ install:
 
 before_script:
   - psql -U postgres -c 'CREATE DATABASE go_blog;';
+  - psql -c "CREATE USER admin WITH PASSWORD 'password';" -U postgres
 
 script:
   - make test
   - $HOME/gopath/bin/goveralls -coverprofile=coverage-all.out -service=travis-ci
 
-env:
-  global:
-    - PGPORT=5433
+
