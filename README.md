@@ -18,10 +18,14 @@
 
 ## Usage
 
-If this is your first time encountering Go, please follow [the instructions](https://golang.org/doc/install) to
-install Go on your computer. The kit requires Go 1.5 or above.
 
-After installing Go, run the following commands to download and install the dependencies:
+If this is your first time encountering Go, please follow [the instructions](https://golang.org/doc/install) to
+install Go on your computer. .
+
+After installing Go, execute `./start.sh` to install the dependencies,spin up the db and run the server.
+ 
+#### Manual usage 
+ Run the following commands to download and install the dependencies:
 
 ```shell
 # install dep
