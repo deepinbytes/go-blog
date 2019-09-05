@@ -46,10 +46,6 @@
   name = "github.com/lib/pq"
 
 [[constraint]]
-  branch = "master"
-  name = "github.com/deepinbytes/go-blog"
-
-[[constraint]]
   name = "github.com/spf13/viper"
   version = "1.0.2"
 
