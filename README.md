@@ -5,7 +5,7 @@
 [![Go Report](https://goreportcard.com/badge/github.com/deepinbytes/go-blog)](https://goreportcard.com/report/github.com/deepinbytes/go-blog)
 
 
-#### Packages used 
+## Packages used 
 
 * Routing framework: [ozzo-routing](https://github.com/go-ozzo/ozzo-routing)
 * Database: [ozzo-dbx](https://github.com/go-ozzo/ozzo-dbx)
@@ -18,50 +18,14 @@
 
 ## Usage
 
-If this is your first time encountering Go, please follow [the instructions](https://golang.org/doc/install) to
-install Go on your computer. The kit requires Go 1.5 or above.
 
-After installing Go, run the following commands to download and install the dependencies:
-
-```shell
-# install dep
-$ curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
-
-# fetch the dependent packages
-cd $GOPATH/deepinbytes/go-blog
-dep ensure
-```
-
-Run docker to bring up local `postgresql` db instance.
+Run `./start.sh` or manually enter the docker compose commands to bring up local server and postgresql db instance.
 
 ```
 $ docker-compose build
+$ docker-compose down
 $ docker-compose up -d
-```
-
-Next, create the database named `go_blog` by executing the command:
-
-```
-docker exec -it go-blog psql -U postgres -c "CREATE DATABASE go_blog ENCODING 'LATIN1' TEMPLATE template0 LC_COLLATE 'C' LC_CTYPE 'C';"
-```
-
-Run the unit tests by using the following command from the project directory:
-```
-go test ./...
-```
-
-
-Now you can build and run the application by running the following command under the
-`$GOPATH/deepinbytes/go-blog` directory:
-
-```shell
-go run server.go
-```
-
-or simply the following if you have the `make` tool:
-
-```shell
-make
+$ docker-compose exec go-blog psql -U admin -d go_blog -a -f /docker-entrypoint-initdb.d/db.sql
 ```
 
 The application runs as an HTTP server at port 8080. It provides the following RESTful endpoints:
