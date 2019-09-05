@@ -32,10 +32,11 @@ func main() {
 	logger := logrus.New()
 
 	// connect to the database
-	db, err := dbx.MustOpen("postgres", app.Config.DSN)
+	db, err := dbx.Open("postgres", app.Config.DSN)
 	if err != nil {
-		panic(err)
+		fmt.Errorf("db error : %s", err)
 	}
+
 	db.LogFunc = logger.Infof
 
 	// wire up API routing
